@@ -59,7 +59,7 @@ namespace ExcelTool.Services
             var files = FileService.GetFiles(_excelInPath);
             //
             var csvfiles = files?.Where(f => f.EndsWith(".csv")).ToList();
-            var mergedfileName = $@"{_excelOutPath}/mergedexcel{Guid.NewGuid()}.xlsx";
+            var mergedfileName = $@"{_excelOutPath}/mergedexcel{Guid.NewGuid()}.csv";
             // 合并csv
             var sw = File.CreateText(mergedfileName);
             if (csvfiles != null && csvfiles.Count() > 0)
@@ -74,7 +74,7 @@ namespace ExcelTool.Services
                         var line = stream.ReadLine();
                         while (!string.IsNullOrEmpty(line))
                         {
-                            if (i > 0 && j == 0)
+                            if (i>0  && j == 0)
                             {                             
                             }
                             else
@@ -82,10 +82,10 @@ namespace ExcelTool.Services
                                 sw.WriteLine(line);
                             }
                             line = stream.ReadLine();
-                            i++;
+                            j++;
                         }                         
                     }
-                    j++;
+                    i++;
                 }
                 sw.Flush();
                 sw.Close();
