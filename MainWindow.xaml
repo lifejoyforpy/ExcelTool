@@ -1,0 +1,29 @@
+<Window x:Class="ExcelTool.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExcelTool"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:smtx="assembly=ShowMeTheXAML"
+        mc:Ignorable="d"
+        Title="ExcelTool" Height="450" Width="800">
+    <Grid materialDesign:ThemeAssist.Theme="Dark">
+        <StackPanel >
+            <GroupBox Header="Excel 处理" materialDesign:ColorZoneAssist.Mode="Accent">
+                <StackPanel Orientation="Horizontal">
+                    <Label Name="lablePath" Width="100" Margin="0,0,50,0" >文件目录</Label> 
+                    <Button Name="merge" Width="100" Click="merge_Click" >合并</Button>
+                </StackPanel>
+            </GroupBox>
+          
+                <GroupBox Header="日志" Grid.Row="1"  Style="{DynamicResource MaterialDesignGroupBox}"  materialDesign:ColorZoneAssist.Mode="Dark">
+                    <TextBlock >
+
+                    </TextBlock>
+                </GroupBox>
+           
+        </StackPanel>
+    </Grid>
+
+</Window>
